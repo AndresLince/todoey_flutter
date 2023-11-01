@@ -6,7 +6,7 @@ class TasksScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.lightBlueAccent,
       body: Container(
         padding: EdgeInsets.only(
           top: 60,
@@ -20,9 +20,13 @@ class TasksScreen extends StatelessWidget {
               child: Icon(
                 Icons.list,
                 size: 30,
+                color: Colors.lightBlueAccent,
               ),
               backgroundColor: Colors.white,
               radius: 30,
+            ),
+            SizedBox(
+              height: 10,
             ),
             Text('Todoey'),
           ],
