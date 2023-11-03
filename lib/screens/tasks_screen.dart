@@ -82,8 +82,7 @@ class TasksList extends StatelessWidget {
     taskWidgets.add(TaskWidget());
 
     return ListView(
-      reverse: true,
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+      padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
       children: taskWidgets,
     );
   }
@@ -95,6 +94,7 @@ class TaskWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text('Tarea #'),
         CheckboxExample()
