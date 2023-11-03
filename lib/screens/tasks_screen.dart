@@ -80,28 +80,30 @@ class TasksList extends StatelessWidget {
 
     return ListView(
       children: [
-        TaskWidget(text: 'Tarea 1'),
-        TaskWidget(text: 'Tarea 2'),
-        TaskWidget(text: 'Tarea 3')
+        TaskTile(text: 'Tarea 1'),
+        TaskTile(text: 'Tarea 2'),
+        TaskTile(text: 'Tarea 3')
       ],
     );
   }
 }
 
-class TaskWidget extends StatelessWidget {
+class TaskTile extends StatelessWidget {
   final String text;
-  const TaskWidget({
+  const TaskTile({
     required this.text
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(text),
-        CheckboxExample()
-      ],
+    return ListTile(
+      title: Text(text),
+      trailing: Checkbox(
+        value: false,
+        onChanged: (value) {
+
+        },
+      ),
     );
   }
 }
