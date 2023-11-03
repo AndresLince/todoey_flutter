@@ -67,9 +67,42 @@ class TasksScreen extends StatelessWidget {
                 topRight: Radius.circular(20),
               ),
             ),
+            child: TasksList(),
           ),
         )
       ]),
     );
   }
 }
+
+class TasksList extends StatelessWidget {
+  const TasksList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    List<TaskWidget> taskWidgets = [];
+    taskWidgets.add(TaskWidget());
+    taskWidgets.add(TaskWidget());
+    taskWidgets.add(TaskWidget());
+    
+    return ListView(
+      reverse: true,
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+      children: taskWidgets,
+    );
+  }
+}
+
+class TaskWidget extends StatelessWidget {
+  const TaskWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Text('Tarea #')
+      ],
+    );
+  }
+}
+
