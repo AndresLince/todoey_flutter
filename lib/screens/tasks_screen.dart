@@ -77,13 +77,13 @@ class TasksList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<TaskWidget> taskWidgets = [];
-    taskWidgets.add(TaskWidget(text: 'Tarea 1'));
-    taskWidgets.add(TaskWidget(text: 'Tarea 2'));
-    taskWidgets.add(TaskWidget(text: 'Tarea 3'));
 
     return ListView(
-      children: taskWidgets,
+      children: [
+        TaskWidget(text: 'Tarea 1'),
+        TaskWidget(text: 'Tarea 2'),
+        TaskWidget(text: 'Tarea 3')
+      ],
     );
   }
 }
