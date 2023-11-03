@@ -77,9 +77,9 @@ class TasksList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<TaskWidget> taskWidgets = [];
-    taskWidgets.add(TaskWidget());
-    taskWidgets.add(TaskWidget());
-    taskWidgets.add(TaskWidget());
+    taskWidgets.add(TaskWidget(text: 'Tarea 1'));
+    taskWidgets.add(TaskWidget(text: 'Tarea 2'));
+    taskWidgets.add(TaskWidget(text: 'Tarea 3'));
 
     return ListView(
       padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
@@ -89,14 +89,17 @@ class TasksList extends StatelessWidget {
 }
 
 class TaskWidget extends StatelessWidget {
-  const TaskWidget({super.key});
+  final String text;
+  const TaskWidget({
+    required this.text
+  });
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text('Tarea #'),
+        Text(text),
         CheckboxExample()
       ],
     );
