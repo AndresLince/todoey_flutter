@@ -56,6 +56,7 @@ class TasksScreen extends StatelessWidget {
         Expanded(
           child: Container(
             height: 300,
+            padding: EdgeInsets.symmetric(horizontal: 30),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
@@ -82,7 +83,6 @@ class TasksList extends StatelessWidget {
     taskWidgets.add(TaskWidget(text: 'Tarea 3'));
 
     return ListView(
-      padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
       children: taskWidgets,
     );
   }
