@@ -9,12 +9,8 @@ class TasksScreen extends StatelessWidget {
       backgroundColor: Colors.lightBlueAccent,
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.lightBlueAccent,
-        child: Icon(
-          Icons.add
-        ),
-        onPressed: () {
-
-        },
+        child: Icon(Icons.add),
+        onPressed: () {},
       ),
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Container(
@@ -84,7 +80,7 @@ class TasksList extends StatelessWidget {
     taskWidgets.add(TaskWidget());
     taskWidgets.add(TaskWidget());
     taskWidgets.add(TaskWidget());
-    
+
     return ListView(
       reverse: true,
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
@@ -99,10 +95,7 @@ class TaskWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [
-        Text('Tarea #')
-      ],
+      children: [Text('Tarea #')],
     );
   }
 }
-
