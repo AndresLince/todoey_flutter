@@ -5,6 +5,10 @@ import '../widgets/task_list.dart';
 class TasksScreen extends StatelessWidget {
   const TasksScreen({super.key});
 
+  Widget buildBottomSheet(BuildContext context) {
+    return Container();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,7 +16,9 @@ class TasksScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.lightBlueAccent,
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(context: context, builder: buildBottomSheet);
+        },
       ),
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Container(
