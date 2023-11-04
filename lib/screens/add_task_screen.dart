@@ -14,25 +14,26 @@ class AddTaskScreen extends StatelessWidget {
             )),
         child: Column(
           children: [
-            Text('asda'),
+            Padding(
+                padding: EdgeInsets.only(top: 16),
+                child: Text(
+                  'Add Task',
+                  style: TextStyle(
+                    color: Colors.lightBlueAccent,
+                    fontSize: 30,
+                  ),
+                )),
             TextField(),
             Padding(
-              padding: EdgeInsets.only(
-                top: 16
-              ),
+              padding: EdgeInsets.only(top: 16),
               child: MaterialButton(
                 color: Colors.lightBlueAccent,
-                onPressed: () {
-
-                },
+                onPressed: () {},
                 minWidth: 300,
                 height: 70.0,
                 child: Text(
                   'Add',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16
-                  ),
+                  style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
               ),
             )
