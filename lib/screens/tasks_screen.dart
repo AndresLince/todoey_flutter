@@ -6,10 +6,6 @@ import '../widgets/task_list.dart';
 class TasksScreen extends StatelessWidget {
   const TasksScreen({super.key});
 
-  Widget buildBottomSheet(BuildContext context) {
-    return AddTaskScreen();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +14,14 @@ class TasksScreen extends StatelessWidget {
         backgroundColor: Colors.lightBlueAccent,
         child: Icon(Icons.add),
         onPressed: () {
-          showModalBottomSheet(context: context, builder: buildBottomSheet);
+          showModalBottomSheet(context: context,
+              isScrollControlled: true,
+              builder: (context) => SingleChildScrollView(
+                  child:Container(
+                    padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+                    child: AddTaskScreen(),
+                  )
+              ));
         },
       ),
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
