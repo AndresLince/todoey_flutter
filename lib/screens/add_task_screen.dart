@@ -23,7 +23,19 @@ class AddTaskScreen extends StatelessWidget {
                     fontSize: 30,
                   ),
                 )),
-            TextField(),
+            SizedBox(
+              width: 300,
+              child: TextField(
+                decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.lightBlueAccent),
+                  ),
+                  enabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.lightBlueAccent),
+                  ),
+                ),
+              ),
+            ),
             Padding(
               padding: EdgeInsets.only(top: 16),
               child: MaterialButton(
