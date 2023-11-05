@@ -25,7 +25,13 @@ class _TaskTileState extends State<TaskTile> {
             decoration: isChecked ? TextDecoration.lineThrough : null),
       ),
       trailing: TaskCheckBox(
-          checkboxState: isChecked, toggleCheckBoxState: checkBoxCallBack),
+          checkboxState: isChecked,
+          toggleCheckBoxState: (newValue) {
+            setState(() {
+              isChecked = newValue!;
+            });
+          }
+      ),
     );
   }
 }
