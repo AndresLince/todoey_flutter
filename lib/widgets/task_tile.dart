@@ -16,7 +16,10 @@ class _TaskTileState extends State<TaskTile> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(widget.text),
+      title: Text(widget.text,
+      style: TextStyle(
+        decoration: TextDecoration.lineThrough
+      ),),
       trailing: TaskCheckBox(checkboxState: isChecked),
     );
   }
@@ -26,7 +29,7 @@ class TaskCheckBox extends StatelessWidget {
   final bool checkboxState;
   TaskCheckBox({
     required this.checkboxState
-  })
+  });
   @override
   Widget build(BuildContext context) {
     return Checkbox(
