@@ -3,9 +3,14 @@ import 'package:todoey_flutter/widgets/task_tile.dart';
 
 import '../models/task.dart';
 
-class TasksList extends StatelessWidget {
+class TasksList extends StatefulWidget {
   const TasksList({super.key});
 
+  @override
+  State<TasksList> createState() => _TasksListState();
+}
+
+class _TasksListState extends State<TasksList> {
   @override
   Widget build(BuildContext context) {
     List<Task> tasks = [
