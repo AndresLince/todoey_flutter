@@ -4,6 +4,7 @@ import '../models/task.dart';
 
 class AddTaskScreen extends StatelessWidget {
   final Function(Task?) addTaskCallBack;
+  String newTaskName = '';
   AddTaskScreen({
     required this.addTaskCallBack,
   });
@@ -33,6 +34,9 @@ class AddTaskScreen extends StatelessWidget {
             SizedBox(
               width: 300,
               child: TextField(
+                onChanged: (value) {
+                  newTaskName = value;
+                },
                 autofocus: true,
                 textAlign: TextAlign.center,
                 decoration: InputDecoration(
@@ -49,8 +53,10 @@ class AddTaskScreen extends StatelessWidget {
             MaterialButton(
               color: Colors.lightBlueAccent,
               onPressed: () {
-                Task newTask = new Task(name: 'name');
-                addTaskCallBack(newTask);
+                if (newTaskName != '') {
+                  Task newTask = new Task(name: newTaskName);
+                  addTaskCallBack(newTask);
+                }
               },
               minWidth: 300,
               height: 70.0,
