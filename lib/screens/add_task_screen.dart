@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../models/task.dart';
+
 class AddTaskScreen extends StatelessWidget {
+  final Function(Task?) addTaskCallBack;
+  AddTaskScreen({
+    required this.addTaskCallBack,
+  });
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -42,7 +48,10 @@ class AddTaskScreen extends StatelessWidget {
             ),
             MaterialButton(
               color: Colors.lightBlueAccent,
-              onPressed: () {},
+              onPressed: () {
+                Task newTask = new Task(name: 'name');
+                addTaskCallBack(newTask);
+              },
               minWidth: 300,
               height: 70.0,
               child: Text(
