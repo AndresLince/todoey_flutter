@@ -5,8 +5,10 @@ import '../models/task.dart';
 
 class TasksList extends StatelessWidget {
   List<Task> tasks;
+  final Function(bool?, int) checkBoxCallBack;
   TasksList({
     required this.tasks,
+    required this.checkBoxCallBack,
   });
   @override
   Widget build(BuildContext context) {
@@ -16,9 +18,7 @@ class TasksList extends StatelessWidget {
         return TaskTile(
           taskTitle: tasks[index].name,
           checkBoxCallBack: (newValue) {
-            /*setState(() {
-              tasks[index].toggleDone();
-            });*/
+            checkBoxCallBack(newValue, index);
           },
           isChecked: tasks[index].isDone,
         );
