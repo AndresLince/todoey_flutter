@@ -89,6 +89,11 @@ class _TasksScreenState extends State<TasksScreen> {
             ),
             child: TasksList(
               tasks: tasks,
+              checkBoxCallBack: (newValue, int index) {
+                setState(() {
+                  tasks[index].toggleDone();
+                });
+              },
             ),
           ),
         )
