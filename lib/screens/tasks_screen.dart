@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:todoey_flutter/models/task_data.dart';
 import 'package:todoey_flutter/screens/add_task_screen.dart';
 
 import '../models/task.dart';
 import '../widgets/task_list.dart';
+import 'package:provider/provider.dart';
 
 class TasksScreen extends StatefulWidget {
   const TasksScreen({super.key});
@@ -12,11 +14,7 @@ class TasksScreen extends StatefulWidget {
 }
 
 class _TasksScreenState extends State<TasksScreen> {
-  List<Task> tasks = [
-    Task(name: 'Tarea 1'),
-    Task(name: 'Tarea 2'),
-    Task(name: 'Tarea 3'),
-  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,9 +30,9 @@ class _TasksScreenState extends State<TasksScreen> {
                     padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
                     child: AddTaskScreen(
                       addTaskCallBack: (Task? newTask) {
-                        setState(() {
+                        /*setState(() {
                           tasks.add(newTask!);
-                        });
+                        });*/
                         Navigator.pop(context);
                       },
                     ),
@@ -74,7 +72,7 @@ class _TasksScreenState extends State<TasksScreen> {
                 ),
               ),
               Text(
-                '12 tasks',
+                '${Provider.of<TaskData>(context).tasks.length} tasks',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 18,
@@ -94,14 +92,7 @@ class _TasksScreenState extends State<TasksScreen> {
                 topRight: Radius.circular(20),
               ),
             ),
-            child: TasksList(
-              tasks: tasks,
-              checkBoxCallBack: (newValue, int index) {
-                setState(() {
-                  tasks[index].toggleDone();
-                });
-              },
-            ),
+            child: TasksList(),
           ),
         )
       ]),
