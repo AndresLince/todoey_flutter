@@ -6,14 +6,7 @@ import '../models/task.dart';
 import '../widgets/task_list.dart';
 import 'package:provider/provider.dart';
 
-class TasksScreen extends StatefulWidget {
-  const TasksScreen({super.key});
-
-  @override
-  State<TasksScreen> createState() => _TasksScreenState();
-}
-
-class _TasksScreenState extends State<TasksScreen> {
+class TasksScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
