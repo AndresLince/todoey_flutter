@@ -21,7 +21,7 @@ class TasksList extends StatelessWidget {
               isChecked: taskData.tasks[index].isDone,
             );
           },
-          itemCount: taskData.tasks.length,
+          itemCount: taskData.taskCount,
         );
       }
     );
