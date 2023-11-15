@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoey_flutter/models/task.dart';
 import 'package:todoey_flutter/widgets/task_tile.dart';
 import 'package:provider/provider.dart';
 
@@ -8,17 +9,21 @@ class TasksList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return ListView.builder(
-      itemBuilder: (context, index) {
-        return TaskTile(
-          taskTitle: Provider.of<TaskData>(context).tasks[index].name,
-          checkBoxCallBack: (newValue) {
-            //checkBoxCallBack(newValue, index);
+    return Consumer<TaskData>(
+      builder: (context, taskData, child) {
+        return ListView.builder(
+          itemBuilder: (context, index) {
+            return TaskTile(
+              taskTitle: taskData.tasks[index].name,
+              checkBoxCallBack: (newValue) {
+                //checkBoxCallBack(newValue, index);
+              },
+              isChecked: taskData.tasks[index].isDone,
+            );
           },
-          isChecked: Provider.of<TaskData>(context).tasks[index].isDone,
+          itemCount: taskData.tasks.length,
         );
-      },
-      itemCount: Provider.of<TaskData>(context).tasks.length,
+      }
     );
   }
 }
