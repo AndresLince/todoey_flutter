@@ -21,4 +21,9 @@ class TaskData extends ChangeNotifier {
   Task getTask(int index) {
     return _tasks[index];
   }
+
+  void updateTask(Task task) {
+    task.isDone = !task.isDone;
+    notifyListeners();
+  }
 }
