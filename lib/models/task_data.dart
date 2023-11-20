@@ -17,4 +17,8 @@ class TaskData extends ChangeNotifier {
     // This call tells the widgets that are listening to this model to rebuild.
     notifyListeners();
   }
+
+  Task getTask(int index) {
+    return _tasks[index];
+  }
 }
