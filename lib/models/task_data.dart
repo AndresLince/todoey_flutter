@@ -11,4 +11,10 @@ class TaskData extends ChangeNotifier {
   int get taskCount {
     return tasks.length;
   }
+
+  void add(Task task) {
+    tasks.add(task);
+    // This call tells the widgets that are listening to this model to rebuild.
+    notifyListeners();
+  }
 }
