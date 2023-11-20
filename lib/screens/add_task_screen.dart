@@ -5,11 +5,7 @@ import '../models/task.dart';
 import '../models/task_data.dart';
 
 class AddTaskScreen extends StatelessWidget {
-  final Function(Task?) addTaskCallBack;
   String newTaskName = '';
-  AddTaskScreen({
-    required this.addTaskCallBack,
-  });
   @override
   Widget build(BuildContext context) {
     return Container(
