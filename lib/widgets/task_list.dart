@@ -20,6 +20,9 @@ class TasksList extends StatelessWidget {
                 taskData.updateTask(task);
               },
               isChecked: task.isDone,
+              onLongPress: () {
+                taskData.removeTask(task);
+              },
             );
           },
           itemCount: taskData.taskCount,
